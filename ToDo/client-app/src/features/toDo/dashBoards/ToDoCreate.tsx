@@ -12,7 +12,8 @@ export default function ToDoCreate(){
         headerText : '',
         innerText : '',
         user_id : 0,
-        checked: false
+        checked: false,
+        isList: false
     }
 
     const[newTaskToDo, setTaskToDo] = useState(initialTask);

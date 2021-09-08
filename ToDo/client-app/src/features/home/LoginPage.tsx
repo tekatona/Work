@@ -19,7 +19,6 @@ export default observer(function LoginPage(){
         const {name, value} = event.target;
         setUser({...newUser, [name] : value});
     }
-    // as = {NavLink} to='/tasksToDo'
 
     return(
         <Segment >

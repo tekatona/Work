@@ -37,7 +37,7 @@ const TasksToDo = {
 
 const Users = {
     login: (user: User) => authorizationRequests.post<User>(`/Authorization/Login`, user),
-    create: (user: User) => authorizationRequests.post<User>('/Authorization/Register', user),
+    create: (user: User) => authorizationRequests.post<User>('/Authorization/Registration', user),
 }
 
 const agent = {

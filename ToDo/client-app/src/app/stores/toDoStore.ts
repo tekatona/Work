@@ -13,12 +13,15 @@ export default class ToDoStore{
         makeAutoObservable(this)
     }
 
+    sortedByDoneTasks = () => {
+        return this.tasksToDo.sort((a,b) => a.checked == b.checked ? 1 : -1);
+    }
+
     loadTasksToDo = async () => {
         try{
             if(!store.userStore.user?.id) return
 
             const tasksToDo = await agent.TasksToDo.list(store.userStore.user?.id);
-
             
             runInAction(()=>{
                 this.tasksToDo = tasksToDo;
@@ -69,7 +72,6 @@ export default class ToDoStore{
     }
 
     setCheck = (taskToDo: TaskToDo) => {
-        
         if(taskToDo.checked){
             taskToDo.checked = false;
         }
@@ -77,8 +79,21 @@ export default class ToDoStore{
             taskToDo.checked = true;
         }
 
-        console.log("set to " + taskToDo.checked)
+        this.updateTaskToDo(taskToDo);
+    }
+
+    setUnsetList = (taskToDo: TaskToDo) => {
+        if(taskToDo.isList){
+            taskToDo.isList = false;
+        }
+        else{
+            taskToDo.isList = true;
+        }
 
         this.updateTaskToDo(taskToDo);
     }
+    
+    divideText = (text:string) =>{
+        return text.split("\n");
+    }   
 }

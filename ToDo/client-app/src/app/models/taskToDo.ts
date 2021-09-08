@@ -3,5 +3,6 @@ export interface TaskToDo {
     headerText : string;
     innerText : string;
     user_id: number,
-    checked: boolean
+    checked: boolean,
+    isList: boolean
 }

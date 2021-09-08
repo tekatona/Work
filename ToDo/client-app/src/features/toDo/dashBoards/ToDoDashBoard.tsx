@@ -21,10 +21,10 @@ export default observer (function ToDoDashBoard(){
         <Grid>
             {console.log(userStore.user?.id + "!!!!")}
             <NavBar />
-            <Grid.Column width='6'>
+            <Grid.Column width={6}>
                 <ToDoList />
             </Grid.Column>
-            <Grid.Column width='10'>
+            <Grid.Column width={10}>
                 {toDoStore.selectedToDoTask &&
                 <ToDoDetails />}
                 {toDoStore.creatingMode &&

@@ -24,11 +24,11 @@ export default observer(function LoginPage(){
     return(
         <Segment >
             <Form>
-            <h1> Registration </h1> 
+                <h1> Registration </h1> 
                 <FormInput placeholder='Login'  name='login' onChange={handleInputChange} />
                 <FormInput placeholder='Password' name='password'onChange={handleInputChange} />
-                <Button onClick={ () => userStore.createUser(newUser) } color='twitter' content='Login' />
-                <Button floated='right' as={NavLink} to ='/Login' color='twitter' content='Have account?' />
+                <Button onClick={ () => userStore.createUser(newUser) } color='twitter' content='Register' />
+                <Button floated='right' as={NavLink} to ='/' color='twitter' content='Have account?' />
             </Form>
         </Segment>
     )

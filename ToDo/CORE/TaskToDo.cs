@@ -11,5 +11,7 @@
         public int User_ID { get; set; }
 
         public bool Checked { get; set; }
+
+        public bool IsList { get; set; }
     }
 }
